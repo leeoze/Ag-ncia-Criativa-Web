@@ -8,20 +8,35 @@
 </head>
 <body>
 
+<!-- ================= CABEÇALHO FIXO ================= -->
 <header class="header">
-    <div class="logo">Agência Criativa Web</div>
+    <div class="header__logo logo">
+        Agência Criativa Web
+    </div>
 
+    <!-- Menu de navegação principal -->
     <nav class="nav">
-        <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contato">Contato</a></li>
+        <ul class="nav__list">
+            <li class="nav__item nav__item--active">
+                <a class="nav__link  nav__link--active" href="#home">Home</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--active" href="#sobre">Sobre Nós</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--active" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--active" href="#depoimentos">Depoimentos</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--active" href="#contato">Contato</a>
+            </li>
         </ul>
     </nav>
 </header>
 
+<!-- ================= BANNER ================= -->
 <section id="home" class="banner">
     <img 
         src="img/banner1.png"
@@ -32,56 +47,71 @@
         sizes="100vw"
         alt="Banner Agência Criativa Web"
     >
-    <div class="banner-texto">
-        <h1>Transformamos ideias em experiências digitais</h1>
-        <p>Design moderno, inovação e resultados reais para o seu negócio.</p>
+
+    <!-- Texto principal do banner -->
+    <div class="banner__texto">
+        <h1 class="banner__titulo">Transformamos ideias em experiências digitais</h1>
+        <p class="banner__descricao">
+            Design moderno, inovação e resultados reais para o seu negócio.
+        </p>
     </div>
 </section>
 
+<!-- ================= SOBRE ================= -->
 <section id="sobre" class="sobre">
-    <h2>Sobre Nós</h2>
-    <p>
+    <h2 class="sobre__titulo">Sobre Nós</h2>
+    <p class="sobre__texto">
         Somos uma agência especializada em design digital e desenvolvimento web.
         Nosso objetivo é criar soluções criativas, funcionais e focadas em resultados.
     </p>
 </section>
 
+<!-- ================= SERVIÇOS ================= -->
 <section id="servicos" class="servicos">
-    <h2>Nossos Serviços</h2>
+    <h2 class="servicos__titulo">Nossos Serviços</h2>
 
-    <div class="servicos-grid">
-        <div class="card">Design Gráfico</div>
-        <div class="card">Desenvolvimento Web</div>
-        <div class="card">Branding</div>
-        <div class="card">UX/UI Design</div>
-        <div class="card">Marketing Digital</div>
-        <div class="card">SEO</div>
+    <!-- Grid de serviços -->
+    <div class="servicos__grid">
+        <div class="card card--servico">Design Gráfico</div>
+        <div class="card card--servico">Desenvolvimento Web</div>
+        <div class="card card--servico">Branding</div>
+        <div class="card card--servico">UX/UI Design</div>
+        <div class="card card--servico">Marketing Digital</div>
+        <div class="card card--servico">SEO</div>
     </div>
 </section>
 
+<!-- ================= DEPOIMENTOS ================= -->
 <section id="depoimentos" class="depoimentos">
-    <h2>Depoimentos</h2>
+    <h2 class="depoimentos__titulo">Depoimentos</h2>
 
     <div class="depoimento">
-        <p>"A Agência Criativa Web superou nossas expectativas!"</p>
-        <span>— João Silva</span>
+        <p class="depoimento__texto">
+            "A Agência Criativa Web superou nossas expectativas!"
+        </p>
+        <span class="depoimento__autor">— João Silva</span>
     </div>
 
     <div class="depoimento">
-        <p>"Design moderno e atendimento excelente."</p>
-        <span>— Maria Oliveira</span>
+        <p class="depoimento__texto">
+            "Design moderno e atendimento excelente."
+        </p>
+        <span class="depoimento__autor">— Maria Oliveira</span>
     </div>
 </section>
 
+<!-- ================= CONTATO ================= -->
 <section id="contato" class="contato">
-    <h2>Contato</h2>
+    <h2 class="contato__titulo">Contato</h2>
 
-    <div class="contato-info">
+    <!-- Informações de contato -->
+    <div class="contato__info">
         <p><strong>Endereço:</strong> Rua Criativa, 123</p>
         <p><strong>Telefone:</strong> (11) 99999-9999</p>
         <p><strong>E-mail:</strong> contato@agenciacriativaweb.com</p>
     </div>
 
+    <!-- Formulário de contato -->
     <form class="form-contato">
         <input type="text" placeholder="Seu nome" required>
         <input type="email" placeholder="Seu e-mail" required>
@@ -90,8 +120,11 @@
     </form>
 </section>
 
+<!-- ================= RODAPÉ ================= -->
 <footer class="footer">
-    <p>© 2026 - Agência Criativa Web. Todos os direitos reservados.</p>
+    <p class="footer__texto">
+        © 2026 - Agência Criativa Web. Todos os direitos reservados.
+    </p>
 </footer>
 
 </body>

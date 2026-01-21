@@ -1,61 +1,84 @@
+/* ================= VARIÁVEIS ================= */
 :root {
     --cor-primaria: #1f2933;
-    --cor-secundaria: #3b82f6;
+    --cor-secundaria: #ffd700;
     --cor-clara: #f9fafb;
-    --fonte-principal: 'Arial', sans-serif;
+    --fonte-principal: Arial, sans-serif;
 }
 
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ================= BASE ================= */
 body {
     font-family: var(--fonte-principal);
     line-height: 1.6;
+    padding-top: 120px; /* espaço para header fixo */
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--cor-primaria);
-    color: white;
-    padding: 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+    
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    text-align: center; 
-    color: pink;
-    text-shadow: 4px 4px 4px #ffd700;
+    color: var(--cor-secundaria);
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 0.5rem;
+    text-shadow: #f7f1e8 2px 2px 5px;
 }
 
-.menu {
+/* ================= MENU ================= */
+.nav {
+    background-color: #f0e990;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.nav__list {
     display: flex;
+    gap: 1rem;
     list-style: none;
-    gap: 2rem;    
 }
 
-.menu a {
-    color: white;
+.nav__item {
+    transition: transform 0.3s;
+}
+
+.nav__item:hover {
+    transform: scale(1.05);
+}
+
+.nav__link {
     text-decoration: none;
-    font-size: 1rem;
+    color: var(--cor-primaria);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
-.menu a:hover { 
-    color: #ffd700; /* muda cor quando passar o mouse no itens menu */ 
-  
+.nav__link:hover {
+    background-color: var(--cor-secundaria);
 }
 
-/* BANNER */
+/* ================= BANNER ================= */
 .banner {
     position: relative;
-    height: 80vh;
+    height: 85vh;
 }
 
 .banner img {
@@ -64,26 +87,27 @@ body {
     object-fit: cover;
 }
 
-.banner-texto {
+.banner__texto {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    text-align: center; 
-    padding: auto;
+    text-align: center;
+    padding: 5rem;
 }
 
-.banner-texto h1 {
-    font-size: 4rem;
-    position: relative;
+.banner__titulo {
+    font-size: 3rem;
 }
 
-.banner-texto p {
-    font-size: 1.4rem;
+.banner__descricao {
+    font-size: 1.3rem;
 }
 
-/* SEÇÕES */
+/* ================= SEÇÕES ================= */
 section {
     padding: 4rem 10vw;
 }
@@ -94,64 +118,62 @@ h2 {
     color: var(--cor-primaria);
 }
 
-/* SERVIÇOS - GRID */
-.servicos-grid {
+/* ================= SERVIÇOS ================= */
+.servicos__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
 }
 
 .card {
-    background: var(--cor-clara);
+    background-color: var(--cor-clara);
     padding: 2rem;
+    border-radius: 8px;
     text-align: center;
-    border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* DEPOIMENTOS */
+/* ================= DEPOIMENTOS ================= */
 .depoimentos {
     background-color: #f3f4f6;
 }
 
 .depoimento {
     max-width: 600px;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     text-align: center;
 }
 
-.contato-info {
+.depoimento__autor {
+    font-weight: bold;
+}
+
+/* ================= CONTATO ================= */
+.contato__info {
     text-align: center;
 }
 
-.sobre {
-    text-align: center;
-}
-
-/* CONTATO */
 .form-contato {
+    max-width: 500px;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 500px;
-    margin: 2rem auto;
 }
 
 .form-contato input,
 .form-contato textarea {
     padding: 0.8rem;
-    font-size: 1rem;
 }
 
 .form-contato button {
-    padding: 0.8rem;
     background-color: var(--cor-secundaria);
-    color: white;
     border: none;
+    padding: 0.8rem;
     cursor: pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
     background-color: var(--cor-primaria);
     color: white;
@@ -159,14 +181,14 @@ h2 {
     padding: 1rem;
 }
 
-/* RESPONSIVIDADE */
+/* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
-    .menu {
+    .nav__list {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
     }
 
-    .banner-texto h1 {
+    .banner__titulo {
         font-size: 2rem;
     }
 }
