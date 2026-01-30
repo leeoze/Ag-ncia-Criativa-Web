@@ -1,0 +1,91 @@
+@use 'variaveis';
+@use 'mixins';
+
+/* BANNER */
+.banner {
+  position: relative;
+  height: 85vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__texto {
+    position: absolute;
+    inset: 0;
+    @include mixins.flex-center(column);
+    color: white;
+    text-align: center;
+    padding: 5rem;
+  }
+
+  &__titulo {
+    font-size: 3rem;
+  }
+
+  &__descricao {
+    font-size: 1.3rem;
+  }
+}
+
+/* SERVIÇOS */
+.servicos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: variaveis.$espacamento-base;
+}
+
+.card {
+  background-color: variaveis.$cor-clara;
+  padding: variaveis.$espacamento-base;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* DEPOIMENTOS */
+.depoimentos {
+  background-color: variaveis.$cor-fundo-depoimentos;
+}
+
+.depoimento {
+  max-width: 600px;
+  margin: calc(variaveis.$espacamento-base / 1.3) auto;
+  text-align: center;
+
+  &__autor {
+    font-weight: bold;
+  }
+}
+
+/* CONTATO */
+.contato__info {
+  text-align: center;
+}
+
+.form-contato {
+  max-width: 500px;
+  margin: variaveis.$espacamento-base auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input,
+  textarea {
+    padding: 0.8rem;
+  }
+
+  button {
+    @include mixins.botao-padrao;
+  }
+}
+
+/* FOOTER */
+.footer {
+  background-color: variaveis.$cor-primaria;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

@@ -1,0 +1,16 @@
+@use 'variaveis';
+@use 'mixins';
+@use 'base';
+@use 'layout';
+@use 'componentes';
+
+@media (max-width: variaveis.$mobile) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner__titulo {
+    font-size: 2rem;
+  }
+}
